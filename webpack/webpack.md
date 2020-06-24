@@ -99,3 +99,5 @@ module.exports = {
     "build": "webpack"
   },
 ```
+
+[参考资料](https://juejin.im/post/5e9ada576fb9a03c391300a1#heading-26)
