@@ -52,8 +52,11 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
+            //base64处理，减少请求数量，会使体积变大
             options: {
-              name: "[name].[ext]", //将打包之后的图片命名为图片的原始名称
+              name: "[name].[ext]", 
+              //将打包之后的图片命名为图片的原始名称
+              //[hash:10]取hash的前十位
               outputPath: "images/", 
               //存放到images文件夹下
               //name的[name]表示使用文件的原始名称, [ext]表示文件的原始类型, [hash]表示以哈希值命名, [path]表示资源相对于context的路径.
