@@ -28,11 +28,15 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
-  module: {                        
+  //loader的设置
+  module: {   
+    //对某种格式的文件进行转换处理
     rules: [
       {
-        test: /\.css$/, //这个正则的意思就是匹配目录下所有以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader   
-        use: ["style-loader", "css-loader"], //style-loader要放到css-loader前面, 不然打包的时候就会报错了.
+        test: /\.css$/, 
+        //这个正则的意思就是匹配目录下所有以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader   
+        use: ["style-loader", "css-loader"],  
+        //style-loader要放到css-loader前面, 不然打包的时候就会报错了.
         //这是因为loader的执行顺序是从右往左，从下往上的，webpack肯定是先将所有css模块依赖解析完得到计算结果再创建style标签。因此应该把style-loader放在css-loader的前面。
         //单独使用了css-loader只能保证我们能引用css模块进来，但是并没有效果
         //而style-loader就可以创建一个style标签，并且把引入进来的css样式都塞到这个标签里
@@ -45,7 +49,8 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]", //将打包之后的图片命名为图片的原始名称
-              outputPath: "images/", //存放到images文件夹下
+              outputPath: "images/", 
+              //存放到images文件夹下
               //name的[name]表示使用文件的原始名称, [ext]表示文件的原始类型, [hash]表示以哈希值命名, [path]表示资源相对于context的路径.
               //(context 默认为webpack.config.js)
             },
