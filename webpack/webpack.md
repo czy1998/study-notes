@@ -35,7 +35,12 @@ module.exports = {
       {
         test: /\.css$/, 
         //这个正则的意思就是匹配目录下所有以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader   
-        use: ["style-loader", "css-loader"],  
+        use: [
+          //将js的样式插入到style标签里
+          "style-loader", 
+          //将css文件转换为js
+          "css-loader"
+        ],  
         //style-loader要放到css-loader前面, 不然打包的时候就会报错了.
         //这是因为loader的执行顺序是从右往左，从下往上的，webpack肯定是先将所有css模块依赖解析完得到计算结果再创建style标签。因此应该把style-loader放在css-loader的前面。
         //单独使用了css-loader只能保证我们能引用css模块进来，但是并没有效果
