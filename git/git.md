@@ -60,4 +60,5 @@ git checkout -b <name> //创建+切换分支
 git switch -c <name> //创建+切换分支
 git merge <name> //合并某分支到当前分支
 git branch -d <name> //删除分支
+git pull origin master //将远程主机的master分支最新内容拉下来后与当前本地分支直接合并 fetch+merge
 ```
