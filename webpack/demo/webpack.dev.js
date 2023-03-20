@@ -26,11 +26,11 @@ module.exports = merge(commonConfig, {
     // 开发环境本地启动的服务配置
     devServer: {
         compress: true, // 启用 gzip compression
-        open: true,
-        port: 9000,
+        open: true, // 自动打开浏览器
+        port: 9000, // 端口号
         static: {
             directory: path.resolve(__dirname, 'dist'),
-            // publicPath: '/dev/', // 决定外部能以怎样的路径通过 devServer来访问构建在内存中的文件，这个字段未显式设定时，则会去沿用 output.publicPath 字段的显式值（如果有的话，否则就用自己的 default 值）
+            // publicPath: '/dev/', // 决定外部能以怎样的路径通过 devServer来访问构建在内存中的文件，这个字段未显式设定时，则会去沿用 output.publicPath 字段的显式值（如果有的话，否则就用自己的 default 值 '/'）
         },
         proxy: {
             // 接口请求代理
@@ -110,14 +110,4 @@ module.exports = merge(commonConfig, {
         //     chunkFilename: '[id].css', // 间接引入css的才会走chunk.filename
         // }),
     ],
-    devServer: {
-        //项目构建路径
-        contentBase: path.resolve(__dirname, 'dist'),
-        //启动gzip压缩
-        compress: true,
-        //端口号
-        port: 3000,
-        //自动打开浏览器
-        open: true,
-    },
 })

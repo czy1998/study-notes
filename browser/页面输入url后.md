@@ -12,7 +12,7 @@
             - http1.0 If-Modified-Since(请求头上)/Last-Modified(响应头)，如果 If-Modified-Since 和 Last-Modified 匹配，那么代表服务器资源并未改变，因此服务端不会返回资源实体，而是只返回头部，通知浏览器可以使用本地缓存。Last-Modified，顾名思义，指的是文件最后的修改时间，而且只能精确到 1s 以内。
             - http1.1 If-None-Match(请求头上)/E-tag(响应头)，如果 If-None-Match 和 E-tag 匹配，则代表内容未变，通知浏览器使用本地缓存，和 Last-Modified 不同，E-tag 更精确，只要文件变，指纹就会变，而且没有 1s 精确度的限制
 4. ~~服务器发送响应数据~~服务器处理请求，并返回 http 报文
-    - 服务器上一般都会安装处理请求到应用——web server，例如 nginx
+    - 服务器上一般都会安装处理请求的应用——web server，例如 nginx
     - 传统的 MVC 模型 ，chrome 用户输入 -> 控制器接收 -> 传递给模型(Modal) -> Modal 与数据库进行存取 -> 选择对应视图(View) -> 将 HTML 返回给浏览器(chrome)
 5. 解析数据，页面渲染
 
