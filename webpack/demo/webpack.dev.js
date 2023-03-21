@@ -50,6 +50,22 @@ module.exports = merge(commonConfig, {
                 exclude: /node_modules/,
                 include: path.resolve(__dirname, 'src'),
                 use: ['babel-loader'],
+                options: {
+                    presets: ['@babel/react'],
+                    plugins: [
+                        /* babel-plugin-import 是一款babel插件 */
+                        /* 通过 .babelrc 配置文件或者 babel-loader 模块编程引入. */
+                        [
+                            'import',
+                            {
+                                libraryName: 'antd',
+                                libraryDirectory: 'es', //表示从库的package.json的main入口；否则默认为lib文件夹
+                                style: 'css', // 在项目编译阶段，可以对引入的 antd 样式文件进行编译，从而可以压缩打包尺寸 true
+                                // style: 'css', 直接引入经过打包后的 antd 样式文件
+                            },
+                        ],
+                    ],
+                },
             },
             {
                 test: /\.(less|css)$/i,

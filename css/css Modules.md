@@ -1,6 +1,6 @@
 # css Modules
 
-### 全局设置
+### 全局作用域
 
 ```less
 .demo {
@@ -13,6 +13,20 @@
 }
 ```
 
+### 继承
+
+```css
+.className {
+    background-color: blue;
+}
+
+.title {
+    composes: className;
+    color: red;
+}
+```
+
 # 参考资料
 
 [CSS Modules 用法教程](https://www.ruanyifeng.com/blog/2016/06/css_modules.html)
+[CSS Module](https://www.jianshu.com/p/35da48b0e5ed)
