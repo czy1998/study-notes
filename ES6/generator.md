@@ -6,7 +6,7 @@
 
 执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。
 
-### 具体实现
+### 具体使用
 
 除了 for...of 循环以外，扩展运算符（...）、解构赋值和 Array.from 方法内部调用的，都是遍历器接口。这意味着，它们都可以将 Generator 函数返回的 Iterator 对象，作为参数。
 
@@ -35,6 +35,42 @@ for (let n of numbers()) {
 }
 // 1
 // 2
+```
+
+#### 使用`yield*`实现 Generator 内调用 Generator
+
+```js
+/* 不使用 yield* */
+function* demo() {
+    yield 1
+    yield 2
+}
+function* demo1() {
+    yield 'qq'
+    for (let a of demo()) {
+        console.log(a)
+    }
+    yield 'ww'
+}
+for (let a of demo1()) {
+    console.log(a)
+}
+// 输出结果 'qq' 1 2 'ww'
+
+/* 使用 yield* */
+function* demo() {
+    yield 1
+    yield 2
+}
+function* demo1() {
+    yield 'qq'
+    yield* demo()
+    yield 'ww'
+}
+for (let a of demo1()) {
+    console.log(a)
+}
+// 输出结果 'qq' 1 2 'ww'
 ```
 
 #### 利用 for...of 循环，遍历任意对象（object）
