@@ -1,6 +1,12 @@
 # vite
 
-webpack 的`冷启动`（刚启动项目的时候）和`热更新速度`一直被人诟病。而一众`基于浏览器原生 ESM 支持`实现的 `no-bundle` 构建工具的问世，让前端开发者又看到了新的希望，其中 Vite 又属于是 `no-bundle` 构建工具阵营中的集大成者。
+webpack 的`冷启动`（刚启动项目的时候）和`热更新速度`一直被人诟病。而一众`基于浏览器原生 ESM 支持`实现的 `bundleless` 构建工具的问世，让前端开发者又看到了新的希望，其中 Vite 又属于是 `bundleless` 构建工具阵营中的集大成者。
+
+### `bundle`与`bundleless`的差异
+
+![浏览器直接加载资源, 不依赖bundle][1]
+![bundle 的开发模式, 每次启动和文件变化时都需要重新打包][2]
+![bundleless 文件的处理有浏览器的请求驱动, 单文件变动只需要处理单个文件][3]
 
 ### 特点
 
@@ -13,6 +19,10 @@ webpack 的`冷启动`（刚启动项目的时候）和`热更新速度`一直�
 
 -   **转换文件格式**：由于一些第三方依赖并没有 ESM 版本，而为了能在 Vite 上运行他们，则需要将其他格式转化为 ESM 的格式并缓存入  `node_modules/.vite`（默认路径）。
 -   **减少 HTTP 请求**：Vite 将有许多内部模块的 ESM 依赖关系转换为单个模块，以提高后续页面加载性能。例如像 lodash-es 这种库里面许多单独的文件相互导入，当我们执行  `import { debounce } from 'lodash-es'`  时，浏览器同时发出 600 多个 HTTP 请求。
+
+### 为什么 vite 生产环境要打包?
+
+尽管原生 ESM 现在得到了广泛支持，但由于嵌套导入会导致额外的网络往返，在生产环境中发布未打包的 ESM 仍然效率低下（即使使用 HTTP/2）。为了在生产环境中获得最佳的加载性能，最好还是将代码进行 tree-shaking、懒加载和 chunk 分割（以获得更好的缓存）。
 
 ### 小结
 
@@ -33,3 +43,7 @@ webpack 的`冷启动`（刚启动项目的时候）和`热更新速度`一直�
 -   [vite 官网](https://www.vitejs.net/)
 -   [webpack or esbuild: Why not both?](https://blog.logrocket.com/webpack-or-esbuild-why-not-both/)
 -   [深入理解 Vite 核心原理](https://juejin.cn/post/7064853960636989454)
+
+[1]: https://img-blog.csdnimg.cn/c184c0bf821949dfb02349a36d148a7e.png
+[2]: https://img-blog.csdnimg.cn/f7686393f7a24be8b4cfc1a98d2ae83d.png
+[3]: https://img-blog.csdnimg.cn/04c8a5b12ede47cfbc5c9781ac2ae6c5.png
