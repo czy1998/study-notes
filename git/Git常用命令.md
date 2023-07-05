@@ -14,8 +14,15 @@ git commit -am <message> // 将文件添加暂存区，并将暂存区的文件�
 ```js
 /* 版本回退 */
 git log // 查看提交历史，以便确定要回退到哪个版本
+git log —- <文件相对路径> // 过滤提交记录，只查看该文件的提交记录
+git log -p -- <文件相对路径> // 查看该文件的提交记录，包括每次提交的具体修改内容，
+git log --stat // 显示每个提交的基本信息，以及涉及的文件和文件的统计信息，例如修改的文件数量和文件的添加/删除行数
 git log --pretty=oneline // 可以减少输出的信息
 git log --pretty="%h - %an, %ae, %ad : %s" // 以 "短哈希值 - 作者名字, 电子邮件地址, 提交日期 : 提交说明" 的格式显示提交历史
+
+git show // 显示最近一次commit的想象信息
+git show <commit-id> // 显示某次commit里的修改
+git show <commit-id> 文件相对路径 // 显示某次commit里指定文件的修改
 
 git reflog // 查看命令历史，以便确定要回到未来的哪个版本
 

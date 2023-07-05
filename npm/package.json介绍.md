@@ -50,3 +50,4 @@ my-project 包下，有 packages/a 子包。此时，我们如果 npm install,�
 ### 参考文献
 
 [package.json 中你还不清楚的 browser，module，main 字段优先级](https://www.cnblogs.com/qianxiaox/p/14041717.html)
+[️package.json 中的 sideEffects](https://blog.csdn.net/jexxx/article/details/128850519)
