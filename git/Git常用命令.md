@@ -44,6 +44,7 @@ git revert <commit hash> -m 1 -n // 撤销 commit，具体查看 使用技巧.md
 ```js
 /* 查看信息 */
 git status // 查看仓库当前的状态
+git status -bs // 简要的查看仓库当前的状态和分支信息，-b 显示分支信息 -s 简洁的显示状态
 
 git diff // 查看工作区和暂存区差异
 git diff --stat // 用于比较工作目录中的文件与暂存区（或指定的提交）之间的差异，并显示更改的文件数量和插入/删除的行数的统计信息
@@ -63,12 +64,14 @@ git remote add origin git@server-name:path/repo-name.git // 关联一个远程�
 git pull origin master // 将远程主机的 master 分支最新内容拉下来后与当前本地分支直接合并，分两步 fetch + merge
 
 git push -u origin master // 第一次推送 master 分支的所有内容，后面提交就不需要 -u，-u 设置上游
+git push origin -d <branch name> // 删除远程分支，确保当前为远程分支对应的本地分支
 
 git clone <git path> // 克隆一个本地库
 
 git branch // 查看分支
 git branch <name> // 创建分支
 git branch -d <name> // 删除分支
+git branch -vv // 查看本地分支对应的 远程分支 以及和远程分支commit的对比关系（谁多谁少），显示本地最近一次提交的 hash 和 commit msg
 
 git checkout <name> // 切换分支
 git checkout -b <name> // 创建 + 切换分支
