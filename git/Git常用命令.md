@@ -1,4 +1,4 @@
-### Git 常用命令
+# Git 常用命令
 
 ```js
 /* 初始化与提交到本地仓库 */
@@ -20,6 +20,7 @@ git log --stat // 显示每个提交的基本信息，以及涉及的文件和�
 git log --pretty=oneline // 可以减少输出的信息
 git log --pretty="%h - %an, %ae, %ad : %s" // 以 "短哈希值 - 作者名字, 电子邮件地址, 提交日期 : 提交说明" 的格式显示提交历史
 git log --grep="初始化" -i // 按照提交信息过滤，查看提交信息包含字段 "初始化" 的commit，-i 查找提交记录时忽略大小写
+git log main..feature // 查找两个分支之间的区别，main..feature这个提交区间的表述，会给出所有已经存在于feature分支但还不存在于main分支的提交记录。如果git log命令在执行这两个区间时都有返回，那么也就意味着你的提交历史已经分叉了。
 
 git show // 显示最近一次commit的想象信息
 git show <commit-id> // 显示某次commit里的修改
@@ -83,3 +84,7 @@ git switch -c <name> // 创建 + 切换分支
 git merge <name> // 合并某分支到当前分支
 git merge --abort // 合并出现冲突后，取消这次合并，恢复代码
 ```
+
+### 参考资料
+
+- [Git命令进阶操作：过滤日志](https://zhuanlan.zhihu.com/p/508811639)
