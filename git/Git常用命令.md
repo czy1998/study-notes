@@ -1,6 +1,6 @@
 # Git 常用命令
 
-```js
+```ts
 /* 初始化与提交到本地仓库 */
 git init // 初始化 git ，把这个目录变成 git 可以管理的仓库
 
@@ -11,7 +11,7 @@ git commit -m <message> // 将暂存区的文件提交到当前分支(本地仓�
 git commit -am <message> // 将文件添加暂存区，并将暂存区的文件提交到当前分支(本地仓库)
 ```
 
-```js
+```ts
 /* 版本回退 */
 git log // 查看提交历史，以便确定要回退到哪个版本
 git log —- <文件相对路径> // 过滤提交记录，只查看该文件的提交记录
@@ -43,7 +43,7 @@ git restore <file path> // 撤销文件在工作区的修改
 git revert <commit hash> -m 1 -n // 撤销 commit，具体查看 使用技巧.md
 ```
 
-```js
+```ts
 /* 查看信息 */
 git status // 查看仓库当前的状态
 git status -bs // 简要的查看仓库当前的状态和分支信息，-b 显示分支信息 -s 简洁的显示状态
@@ -56,10 +56,12 @@ git diff HEAD -- <file path> // 用于比较当前工作目录中的文件 file 
 git rm // 用于删除已跟踪的文件或目录，并将删除操作记录到版本历史中
 ```
 
-（1）当暂存区中没有文件时，git diff 比较的是，工作区中的文件与上次提交到版本库中的文件。
-（2）当暂存区中有文件时，git diff 则比较的是，当前工作区中的文件与暂存区中的文件。
+**git diff 的比较逻辑**
 
-```js
+1. 当暂存区中没有文件时，git diff 比较的是，工作区中的文件与上次提交到版本库中的文件。
+1. 当暂存区中有文件时，git diff 则比较的是，当前工作区中的文件与暂存区中的文件。
+
+```ts
 //远程仓库
 git remote add origin git@server-name:path/repo-name.git // 关联一个远程库
 
@@ -78,13 +80,10 @@ git branch -vv // 查看本地分支对应的 远程分支 以及和远程分支
 git checkout <name> // 切换分支
 git checkout -b <name> // 创建 + 切换分支
 
-git switch <name> // 切换分支
-git switch -c <name> // 创建 + 切换分支
-
 git merge <name> // 合并某分支到当前分支
 git merge --abort // 合并出现冲突后，取消这次合并，恢复代码
 ```
 
 ### 参考资料
 
-- [Git命令进阶操作：过滤日志](https://zhuanlan.zhihu.com/p/508811639)
+- [Git 命令进阶操作：过滤日志](https://zhuanlan.zhihu.com/p/508811639)
