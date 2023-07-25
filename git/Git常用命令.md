@@ -19,6 +19,7 @@ git log -p -- <文件相对路径> // 查看该文件的提交记录，包括每
 git log --stat // 显示每个提交的基本信息，以及涉及的文件和文件的统计信息，例如修改的文件数量和文件的添加/删除行数
 git log --pretty=oneline // 可以减少输出的信息
 git log --pretty="%h - %an, %ae, %ad : %s" // 以 "短哈希值 - 作者名字, 电子邮件地址, 提交日期 : 提交说明" 的格式显示提交历史
+git log --grep="初始化" -i // 按照提交信息过滤，查看提交信息包含字段 "初始化" 的commit，-i 查找提交记录时忽略大小写
 
 git show // 显示最近一次commit的想象信息
 git show <commit-id> // 显示某次commit里的修改
