@@ -5,7 +5,7 @@
 **node 相关**
 
 - yargs-parser 终端参数解析器
-- schema-utils 在加载器和插件中验证选项的包
+- [schema-utils][1] 在加载器和插件中验证选项的包
 - rimraf 节点的深度删除模块(如' rm -rf ')
 - ora 优雅的终端机
 - node-ssh 封装 ssh2 的一个非常轻量级的 Promise 包装器，可以连接客户端和服务器
@@ -63,3 +63,5 @@ cross-env 是运行跨平台设置和使用环境变量的脚本
 
 这里 cross-env 可以帮你设置环境变量，由于在不同系统平台设置环境变量的指令基本都不同（windows、mac 等），如果写死一种，则在其他系统下执行可能会报错.
 cross-env 就可以帮你在不同系统下正确的的设置环境变量.
+
+[1]:https://www.51cto.com/article/703602.html
