@@ -32,7 +32,7 @@ lerna list # 查看所有的子包名称
     2. 在子包目录下执行 npm install 命令，安装子包依赖项。
     3. 在根目录下的 node_modules 目录中，创建一个软链接，指向该子包的 node_modules 目录。
 
-### 参考资料
+### 参考文章
 
 [Lerna 学习与理解](https://juejin.cn/post/7005399626744332295#heading-12)
 [lerna 入门教程](https://blog.51cto.com/u_15342387/3612254)

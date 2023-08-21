@@ -62,7 +62,7 @@ swc 有自己的配置文件`.swcrc`，与 babel 的配置文件不同的是 swc
 -   若需要深入开发的话，需要学习 Rust，有较高的学习成本。
 -   SWC 虽然有 bundle 能力，但是 bundle 能力还不太完善，目前其在工程化领域更像是 Compiler（编译工具）。
 
-### 参考资料
+### 参考文章
 
 1. [SWC 文档-配置文件部分](https://swc.rs/docs/configuration/swcrc)
 

@@ -56,7 +56,7 @@ esbuild 对外提供了两个核心 API——tranform 和 build，主要功能�
 -   直接使用 esbuild 进行打包具有一定的使用成本，并且不能完全覆盖使用场景。
 -   在代码分割和 CSS 处理方面功能还有待完善。
 
-### 参考资料
+### 参考文章
 
 1. [esbuild api文档](https://esbuild.github.io/api/)
 

@@ -38,7 +38,7 @@ webpack 的`冷启动`（刚启动项目的时候）和`热更新速度`一直�
 
 -   生态相比于 webpack 还有一定差距，不过差距正在不断缩小。
 
-### 参考资料
+### 参考文章
 
 -   [vite 官网](https://www.vitejs.net/)
 -   [webpack or esbuild: Why not both?](https://blog.logrocket.com/webpack-or-esbuild-why-not-both/)
