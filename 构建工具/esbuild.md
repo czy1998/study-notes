@@ -23,6 +23,10 @@ esbuild 对外提供了两个核心 API——tranform 和 build，主要功能�
 -   支持将 js、ts、jsx、tsx、css 等一系列文件的转译。
 -   支持文件监听和 devServer。
 -   支持 sourcemap。
+    - sourceMap 是一项将编译、打包、压缩后的代码映射回源代码的技术
+     由于打包压缩后的代码并没有阅读性可言，一旦在开发中报错或者遇到问题，直接在混淆代码中 debug 问题会带来非常糟糕的体验，
+     sourceMap 可以帮助我们快速定位到源代码的位置，提高我们的开发效率。
+     sourceMap 其实并不是 esbuild 特有的功能，而是 esbuild 支持 sourceMap ，像 JQuery 也支持 souceMap。
 -   支持 code-splitting。
 -   支持 tree-shaking 和文件压缩。
 -   ...
