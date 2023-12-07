@@ -41,6 +41,9 @@ git checkout -- <file path> // 撤销文件在工作区的修改，写多个 pat
 git restore <file path> // 撤销文件在工作区的修改
 
 git revert <commit hash> -m 1 -n // 撤销 commit，具体查看 使用技巧.md
+
+git rebase -i --root // 变基所有的commit
+                     // 相关介绍可以查阅 https://blog.csdn.net/weixin_42310154/article/details/119004977
 ```
 
 ```ts
