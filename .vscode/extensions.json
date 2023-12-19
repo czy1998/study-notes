@@ -1,0 +1,25 @@
+// description:
+// - 配置完成后，项目开发者在第一次打开项目的时候会收到 VS Code 的推荐提醒，可以进行一键安装。
+// - 如果错过了这次提醒，在侧边栏的插件选项中，也可以筛选出推荐插件进行一键安装。
+
+{
+  // 每一项都是一个插件 ID
+  "recommendations": [
+    "formulahendry.auto-rename-tag", // 闭合时自动添加结束标签，同时修改开始、结束标签
+    "MS-CEINTL.vscode-language-pack-zh-hans", // 中文语言包
+    "usernamehw.errorlens", // 增强错误信息的提示
+    "dsznajder.es7-react-js-snippets", // react、js 的代码片段
+    "dbaeumer.vscode-eslint", // eslint 代码静态分析工具
+    "maixiaojie.git-emoji-zh", // 提交 git 的时候，加上 emoji 前缀
+    "mhutchie.git-graph", // 图形化查看git提交节点
+    "eamodio.gitlens", // 增强 git 的使用
+    // "redhat.java", // 支持 java 代码的快捷跳转
+    // "shd101wyy.markdown-preview-enhanced", // 增强预览 markdown 文件
+    // "Vue.volar", // 支持 vue 代码高亮（猜测）
+    // "qiu8310.minapp-vscode", // 支持 WXML 代码高亮（猜测）
+    // "adpyke.codesnap", // 截取漂亮的代码截图
+    // "WallabyJs.quokka-vscode", // js 和 ts 的实时运行代码平台，提供实时反馈
+    "esbenp.prettier-vscode", // prettier 漂亮的代码格式化器
+    "TabNine.tabnine-vscode" // 按 Tab AI 帮你补全代码
+  ]
+}
