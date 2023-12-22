@@ -34,6 +34,7 @@
 - father 一个无捆绑/捆绑构建工具
 - dumi React 组件的文档生成器
 - classnames 一个简单的工具，用于有条件地连接类名
+- react-beautiful-dnd 用于实现 React 内的拖拽功能
 
 **日期格式化相关**
 
@@ -64,4 +65,4 @@ cross-env 是运行跨平台设置和使用环境变量的脚本
 这里 cross-env 可以帮你设置环境变量，由于在不同系统平台设置环境变量的指令基本都不同（windows、mac 等），如果写死一种，则在其他系统下执行可能会报错.
 cross-env 就可以帮你在不同系统下正确的的设置环境变量.
 
-[1]:https://www.51cto.com/article/703602.html
+[1]: https://www.51cto.com/article/703602.html
