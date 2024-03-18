@@ -1,5 +1,5 @@
 # 官方文档 https://editorconfig.org
-# .editorconfig 是一个用于统一代码风格的配置文件，它可以被多个编辑器和IDE识别和应用。通过在项目中添加一个名为 .editorconfig 的文件，可以确保团队成员在不同的编辑器中编写代码时遵循相同的代码风格和规范。
+# .editorconfig 是一个用于统一代码风格的配置文件，它可以被多个编辑器和 IDE 识别和应用。通过在项目中添加一个名为 .editorconfig 的文件，可以确保团队成员在不同的编辑器中编写代码时遵循相同的代码风格和规范。
 
 # EditorConfig 插件会从文件所在目录开始逐级向上查找 .editorconfig，直到到达根目录或者找到包含属性 root=true 的 .editorconfig 文件为止。
 root = true # 控制配置文件 .editorconfig 是否生效的字段
