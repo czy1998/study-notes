@@ -40,13 +40,22 @@
 
    // Uncaught (in promise) DOMException: Document is not focused.
    ```
-4. 重发network里的请求 + 修改参数重新发送
-  - 选择已有的请求，右键，选择 `Replay XHR` 即可重新发送该请求
-  - 选择已有的请求，右键，选择 `Copy as fetch` ，然后将复制的内容粘贴到 `console` 里，修改需要变动的参数，并作如下处理，然后回车即可在network里查看修改参数后的请求了
-    ```js
-      fetch(...)
-      .then(res => res.json()) // 末尾加上这一行
-    ```
-5. 聚焦到控制台(console)
-  在页面中若已开启开发者工具面板，但此时焦点在页面中，想要快速聚焦到控制台，可以通过如下指令
-  `ctrl + ~` 注：`～` 为 Tab 上面的按键
+
+4. 重发 network 里的请求 / 修改参数重新发送 / 拷贝出来在 终端、postman、apifox 等工具使用
+
+- 选择已有的请求，右键，选择 `Replay XHR` 即可重新发送该请求
+- 选择已有的请求，右键，选择 `Copy as fetch` ，然后将复制的内容粘贴到 `console` 里，修改需要变动的参数，并作如下处理，然后回车即可在 network 里查看修改参数后的请求了
+  ```js
+    fetch(...)
+    .then(res => res.json()) // 末尾加上这一行
+  ```
+- 选择已有的请求，右键，选择 `Copy as cUrl`，然后直接拷贝到`终端`再回车、在 postman、apifox 里则需找到 `import` 按钮 / `+` 按钮，然后粘贴到对应工具里即可
+
+5. **聚焦到控制台(console)**
+   在页面中若已开启开发者工具面板，但此时焦点在页面中，想要快速聚焦到控制台，可以通过如下指令
+   `ctrl + ~` 注：`～` 为 Tab 上面的按键
+
+6. **快速搜索(切换)tab，可以跨窗口切换**
+   ```sh
+     cmd + shift + a # 快速搜索(切换)tab，可以跨窗口切换
+   ```
