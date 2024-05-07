@@ -20,6 +20,10 @@
     // "adpyke.codesnap", // 截取漂亮的代码截图
     // "WallabyJs.quokka-vscode", // js 和 ts 的实时运行代码平台，提供实时反馈
     "esbenp.prettier-vscode", // prettier 漂亮的代码格式化器
-    "TabNine.tabnine-vscode" // 按 Tab AI 帮你补全代码
+    "TabNine.tabnine-vscode", // 按 Tab AI 帮你补全代码
+    // "biomejs.biome", // 代码格式化工具
+    // "streetsidesoftware.code-spell-checker", // 检查单词拼写是否正确
+    // "yrm.type-challenges", // 练习ts的插件
+    // "alibaba-cloud.tongyi-lingma", // 通义灵码，智能编码助手
   ]
 }
