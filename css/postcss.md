@@ -14,6 +14,8 @@ postCSS 是一个允许使用 JS 插件转换样式的工具。 这些插件可�
 - postcss-px-to-viewport
   - 这是一个将 px 单位转换为视口单位的 (vw, vh, vmin, vmax) 的 PostCSS 插件，它可以将你 CSS 中的 px 单位转化为 vw，1vw 等于 1/100 视口宽度。
   - 可用于实现移动端适配
+- autoprefixer
+  - 配置了它就可以不用添加浏览器属性前缀。Autoprefixer 将使用基于当前浏览器流行度和属性支持的数据为您应用前缀。
 
 ### 参考资料
 

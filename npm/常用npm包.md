@@ -18,6 +18,7 @@
 - chalk 是一个非常简单的库，创建它的目的很简单——给你的终端字符串添加样式
 - fs-extra Node.js fs 包中没有包含的方法，比如 copy(), remove(), mkdirs()
 - cross-env 运行跨平台设置和使用环境变量的脚本
+- glob 使用 shell 使用的模式匹配文件。JavaScript 中最正确和第二快的 glob 实现。
 
 **Lint 相关**
 
