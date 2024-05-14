@@ -2,8 +2,8 @@
 
 ### type
 
--   设置为 module 后，允许指定包内所有的`.js`文件为 ESM 模块（import/export）
--   设置为 commonjs 或者省略，则对所有的`.js`文件都被视为 commonjs
+- 设置为 module 后，允许指定包内所有的`.js`文件为 ESM 模块（import/export）
+- 设置为 commonjs 或者省略，则对所有的`.js`文件都被视为 commonjs
 
 ### workspaces
 
@@ -17,8 +17,8 @@
 
 ```json
 {
-    "name": "my-project",
-    "workspaces": ["packages/a"]
+  "name": "my-project",
+  "workspaces": ["packages/a"]
 }
 ```
 
@@ -46,6 +46,10 @@ my-project 包下，有 packages/a 子包。此时，我们如果 npm install,�
    +-- a
    |   `-- package.json
 ```
+
+### sideEffects
+
+指出有副作用的文件/目录，常配合构建工具的 sideEffects 配置使用，进行 tree shaking
 
 ### 参考文献
 

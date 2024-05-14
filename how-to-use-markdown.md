@@ -181,7 +181,7 @@
 
 [1]: http://static.runoob.com/images/runoob-logo.png
 
-Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 <img> 标签。
+Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 `<img>` 标签。
 
 ```md
 <img src="http://static.runoob.com/images/runoob-logo.png" width="50%">
@@ -270,6 +270,11 @@ st->op->cond
 cond(yes)->e
 cond(no)->op
 ```
+
+**复选框**
+
+- [x] 选中
+- [ ] 未选中
 
 <a href='#top'>回到顶部</a>
 
