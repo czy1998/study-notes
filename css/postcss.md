@@ -16,6 +16,8 @@ postCSS 是一个允许使用 JS 插件转换样式的工具。 这些插件可�
   - 可用于实现移动端适配
 - autoprefixer
   - 配置了它就可以不用添加浏览器属性前缀。Autoprefixer 将使用基于当前浏览器流行度和属性支持的数据为您应用前缀。
+  - Autoprefixer 使用 Browserslist 来定义目标浏览器。我们可以在 package.json 中添加 browserslist 字段，或者创建一个 .browserslistrc 文件
+  - 如果以上两项配置都没有，其将默认使用 Browserslist 的默认配置（还需去查询确认）
 
 ### 参考资料
 
