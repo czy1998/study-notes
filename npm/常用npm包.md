@@ -5,6 +5,7 @@
 **提效**
 
 - @antfu/ni 运行脚本时自动识别项目所使用的 npm 包管理工具，并用其做关联操作
+- vconsole 一个轻量、可拓展、针对手机网页的前端开发者调试面板
 
 **node 相关**
 
@@ -18,7 +19,7 @@
 - chalk 是一个非常简单的库，创建它的目的很简单——给你的终端字符串添加样式
 - fs-extra Node.js fs 包中没有包含的方法，比如 copy(), remove(), mkdirs()
 - cross-env 运行跨平台设置和使用环境变量的脚本
-- glob 使用 shell 使用的模式匹配文件。JavaScript 中最正确和第二快的 glob 实现。
+- glob 使用 shell 使用的模式匹配文件。JavaScript 中最正确和第二快的 glob 实现
 
 **Lint 相关**
 
