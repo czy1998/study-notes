@@ -119,8 +119,7 @@
 ```sh
   cmd + M # 缩小窗口
   ctrl + w # 切换窗口，可以切换到最小化的窗口
-  cmd + alt + 左/右方向键 # 切换终端tab
-  cmd + shift + 左/右中括号 # 切换工作区tab
+  cmd + alt + 左/右方向键 # 切换终端tab/工作区tab
 ```
 
 8. 折叠相关
