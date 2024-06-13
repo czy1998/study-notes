@@ -88,3 +88,17 @@
      cmd + shift + a # 快速搜索(切换)tab，可以跨窗口切换
      cmd + alt + 左/右方向键 # 切换左右tab
    ```
+
+7. 快速搜索元素
+
+   在 console 面板下，输入如下结构代码，即可获取页面所有包括 class `breadcrumbs__link` 的节点的数组
+
+   ```js
+   $$(".breadcrumbs__link"); // (3) [a.breadcrumbs__link, span.breadcrumbs__link, span.breadcrumbs__link]
+   ```
+
+8. 快速运行 snippet(代码片段)
+
+   1. cmp + p 唤出【打开文件】面板
+   2. 输入英文感叹号 `!`
+   3. 即可上下选择需要运行的 snippet
