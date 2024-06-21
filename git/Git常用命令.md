@@ -26,6 +26,10 @@ git show // 显示最近一次commit的想象信息
 git show <commit-id> // 显示某次commit里的修改
 git show <commit-id> 文件相对路径 // 显示某次commit里指定文件的修改
 
+git stash // 暂存工作区、暂存区的修改
+          // -m 同 gti commit 填写描述信息
+          // -k 只暂存未被跟踪的文件（即未进行 git add 的）
+
 git reflog // 查看命令历史，以便确定要回到未来的哪个版本
 
 git reset --hard commit_id // 回退到某个版本，其 git log 也会更改为跳转版本的log
