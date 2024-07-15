@@ -45,6 +45,16 @@
          // 关闭组中其他编辑器
          "key": "cmd+k cmd+o",
          "command": "workbench.action.closeOtherEditors"
+       },
+       // 查看: 最大化编辑器组并隐藏侧栏
+       {
+         "key": "cmd+g b",
+         "command": "workbench.action.maximizeEditorHideSidebar"
+       },
+       // 查看: 重置编辑器组大小
+       {
+         "key": "cmd+g r",
+         "command": "workbench.action.evenEditorWidths"
        }
      ]
      ```
