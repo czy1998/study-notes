@@ -55,6 +55,11 @@
        {
          "key": "cmd+g r",
          "command": "workbench.action.evenEditorWidths"
+       },
+       // 查看: 按最近使用显示所有编辑器
+       {
+         "key": "cmd+2",
+         "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
        }
      ]
      ```
