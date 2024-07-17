@@ -25,5 +25,6 @@
     // "streetsidesoftware.code-spell-checker", // 检查单词拼写是否正确
     // "yrm.type-challenges", // 练习ts的插件
     // "alibaba-cloud.tongyi-lingma", // 通义灵码，智能编码助手
+    "simonhe.log", // 一个快速生成log插件
   ]
 }
