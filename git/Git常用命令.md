@@ -31,6 +31,7 @@ git stash // 暂存工作区、暂存区的修改
           // -k 只暂存未被跟踪的文件（即未进行 git add 的）
 
 git reflog // 查看命令历史，以便确定要回到未来的哪个版本
+           // --date=local 为命令添加日期
 
 git reset --hard commit_id // 回退到某个版本，其 git log 也会更改为跳转版本的log
 git reset --hard HEAD^ // 回退到上个版本，HEAD表示当前版本
