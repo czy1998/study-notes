@@ -1,0 +1,6 @@
+# 注释是这样写的，以#号开头
+last 1 version # 后的一个版本
+> 1%  # 代表全球超过1%使用的浏览器
+not dead
+
+# 前端工程基础知识点--Browserslist (基于官方文档翻译）: https://juejin.cn/post/6844903669524086797
