@@ -21,7 +21,9 @@ const Component = React.Component;
 
 # JSX
 
-JSX 就是 Javascript 和 XML 结合的一种格式。React 发明了 JSX，可以方便的利用 HTML 语法来创建虚拟 DOM，当遇到<，JSX 就当作 HTML 解析，遇到{就当 JavaScript 解析.
+JSX 就是 Javascript 和 XML 结合的一种格式。React 发明了 JSX，可以方便的利用 HTML 语法来创建虚拟 DOM，当遇到`<`，JSX 就当作 HTML 解析，遇到`{`就当 JavaScript 解析.
+
+- 在构建 JSX 时，React 会立即计算 `{}` 大括号内到内容，不管他最终是否会被渲染
 
 在 jsx 中为标签添加样式，要用`className`
 
@@ -50,27 +52,7 @@ JSX 就是 Javascript 和 XML 结合的一种格式。React 发明了 JSX，可�
 </ul>
 ```
 
-要添加标签和 input 组件联动，其中的`for`要换为`htmlfor`
-
-```js
-  <label for="jspang">加入服务：</label> //错误写法
-  <label htmlFor="jspang">加入服务：</label>
-  //例子
-  <div>
-    <label htmlFor="jspang">加入服务：</label>
-    <input id="jspang" className="input" value={this.state.inputValue} onChange={this.inputChange.bind(this)} />
-    <button onClick={this.addList.bind(this)}> 增加服务 </button>
-  </div>
-```
-
-```js
-<ul className="my-list">
-  <li>{false ? "JSPang.com" : "技术胖"}</li> //这里大括号里就是js代码
-  <li>I love React</li>
-</ul>
-```
-
-# React.creaetElement
+# React.createElement
 
 用 React 的 createElement 来创建 React DOM
 
@@ -93,74 +75,23 @@ ReactDOM.render(title, document.getElementById("root"));
 - 第二个参数 b：表示该元素上的属性，使用 JavaScript 对象方式表示
 - 第三个参数 c：表示该元素内部的内容，可以是文字，可以继续嵌套另外一个 `React.createElement(a, b, c)`
 
-# 组件外层包裹原则
-
-React 要求必须在一个组件的最外层进行包裹。
-
-下面的例子就是错误的
-
-```js
-  import React,{Component} from 'react'
-
-  class Xiaojiejie extends Component{
-      render(){
-          return  (
-                 <div><input /> <button> 增加服务 </button></div>
-                 <ul>
-                     <li>按摩</li>
-                     <li>推背</li>
-                 </ul>
-          )
-      }
-  }
-  export default Xiaojiejie
-```
-
-如果因为布局问题无法在外添加标签——可以使用`<Fragment>`标签
-
 # Fragment 标签
 
-先进行引入，然后把最外层的<div>标签，换成<Fragment>标签，代码如下
+- 可以在不添加额外节点的情况下将子元素组合
+- 通常使用 `<>...</>` 形式
 
-```js
-  import React,{Component,Fragment } from 'react'
-  import Xiaojiejie from "./Xiaojiejie" //引入组件
+```jsx
+import React, { Component, Fragment } from "react";
 
-  class Xiaojiejie extends Component{
-      render(){
-          return  (
-              <Fragment>
-                 <div><input /> <button> 增加服务 </button></div>
-                 <ul>
-                     <li>按摩</li>
-                     <li>推背</li>
-                     <Xiaojiejie /> //使用引入的组件需要<>
-                 </ul>
-              </Fragment>
-          )
-      }
-  }
-  export default Xiaojiejie
-```
-
-# 数据绑定与绑定事件
-
-```js
-//input组件
-<input value={this.state.inputValue} onChange={this.inputChange} /> //这里给input的value绑定了state里的一个属性，也添加了一个inputChange()方法
-```
-
-```js
-//inputChange()方法
-inputChange = (e) => {
-  //使用了箭头函数
-  console.log(e.target); //指向接受事件的目标DOM元素
-  console.log(e.target.value);
-  onsole.log(this); //指向APP
-  this.setState({
-    inputvalue: e.target.value,
-  });
+const Demo = () => {
+  return (
+    <>
+      <div>hello</div>
+      <div>world</div>
+    </>
+  );
 };
+export default Demo;
 ```
 
 # React 渲染与更新流程
