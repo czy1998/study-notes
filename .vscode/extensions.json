@@ -9,7 +9,8 @@
     "MS-CEINTL.vscode-language-pack-zh-hans", // 中文语言包
     "usernamehw.errorlens", // 增强错误信息的提示
     "dsznajder.es7-react-js-snippets", // react、js 的代码片段
-    "dbaeumer.vscode-eslint", // eslint 代码静态分析工具
+    "burkeholland.simple-react-snippets", // 一些简单的 react 代码片段
+    // "dbaeumer.vscode-eslint", // eslint 代码静态分析工具
     "maixiaojie.git-emoji-zh", // 提交 git 的时候，加上 emoji 前缀
     "mhutchie.git-graph", // 图形化查看git提交节点
     "eamodio.gitlens", // 增强 git 的使用
@@ -19,12 +20,12 @@
     // "qiu8310.minapp-vscode", // 支持 WXML 代码高亮（猜测）
     // "adpyke.codesnap", // 截取漂亮的代码截图
     // "WallabyJs.quokka-vscode", // js 和 ts 的实时运行代码平台，提供实时反馈
-    "esbenp.prettier-vscode", // prettier 漂亮的代码格式化器
+    // "esbenp.prettier-vscode", // prettier 漂亮的代码格式化器
     "TabNine.tabnine-vscode", // 按 Tab AI 帮你补全代码
-    // "biomejs.biome", // 代码格式化工具
-    // "streetsidesoftware.code-spell-checker", // 检查单词拼写是否正确
+    // "biomejs.biome", // 代码格式化工具，包含了部分 eslint 与 prettier 的功能
+    "streetsidesoftware.code-spell-checker", // 检查单词拼写是否正确
     // "yrm.type-challenges", // 练习ts的插件
     // "alibaba-cloud.tongyi-lingma", // 通义灵码，智能编码助手
-    "simonhe.log", // 一个快速生成log插件
+    // "simonhe.log", // 一个快速生成log插件
   ]
 }
