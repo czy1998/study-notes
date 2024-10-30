@@ -43,6 +43,11 @@ source ~/.zshrc
 这时候可以去安装 `Powerline fonts`，将其应用于终端的【偏好设置】中。
 vscode 终端里若也有问题，可以去设置中搜索 `Editor: Font Family`,将新安装的字体添加进入即可
 
+**其他主题**
+
+除了使用 `oh-my-zsh` 内置的主题以外，还可以使用别的主题。
+这里推荐使用一个主题 `spaceship-prompt`
+
 4. 配置插件
 
 个人推荐几个插件，都需要自己额外安装
@@ -50,6 +55,8 @@ vscode 终端里若也有问题，可以去设置中搜索 `Editor: Font Family`
 ```sh
 plugins=(
     git
+    # 插件功能：支持众多命令的别名，目录如下
+    # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
     zsh-autosuggestions
     # 插件功能：输入命令时可提示自动补全（灰色部分），按tab键（mac 是方向键→ ）即可补全。
     zsh-syntax-highlighting
@@ -63,7 +70,13 @@ plugins=(
     # 插件可以让你快速跳转到最常用的目录。它会记住你经常访问的目录，并在你输入 z <目录名> 的时候自动补全相应的目录。如果你经常在命令行下工作，这个插件会非常有用。
     # z 插件支持命令补全功能，同样是使用tab实现命令补全； 比如要进入的路径为 documnets/github/demo，终端输入 z de
     # 然后按tab键，便可显示出具体路径，如果是自己想进入的路径直接回车
+    # 个人平时用到的比较少
 )
 ```
 
 5. 安装完成后新开终端，或者执行 `source ~/.zshrc` 命令即可。
+
+### 参考资料
+
+- [oh-my-zsh 仓库](https://github.com/ohmyzsh/ohmyzsh)
+- [spaceship-prompt 主题](https://github.com/spaceship-prompt/spaceship-prompt)
