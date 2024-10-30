@@ -28,11 +28,11 @@ lerna list # 查看所有的子包名称
 1. 从根目录下的 package.json 文件中读取所有的依赖项和子包列表。
 2. 在根目录下执行 npm install 命令，安装根目录下的所有依赖项。
 3. 遍历所有子包，依次执行以下操作：
-    1. 从子包的 package.json 文件中读取依赖项列表和包名称。
-    2. 在子包目录下执行 npm install 命令，安装子包依赖项。
-    3. 在根目录下的 node_modules 目录中，创建一个软链接，指向该子包的 node_modules 目录。
+   1. 从子包的 package.json 文件中读取依赖项列表和包名称。
+   2. 在子包目录下执行 npm install 命令，安装子包依赖项。
+   3. 在根目录下的 node_modules 目录中，创建一个软链接，指向该子包的 node_modules 目录。
 
-### 参考文章
+### 参考资料
 
 [Lerna 学习与理解](https://juejin.cn/post/7005399626744332295#heading-12)
 [lerna 入门教程](https://blog.51cto.com/u_15342387/3612254)

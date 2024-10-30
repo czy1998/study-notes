@@ -15,7 +15,7 @@ Babel 是一个 JavaScript 编译器。主要用于将 ECMAScript 2015+ 版本�
 > Babel 只负责编译新标准引入的语法，比如 Arrow function、Class、ES Module 等，它不会编译原生对象新引入的方法和 API，比如 Array.includes、Map、Set 等，这些需要通过 Polyfill 来解决。
 > ![图解](https://img-blog.csdnimg.cn/20210322145844429.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dzbG5fMTIzNDU2,size_16,color_FFFFFF,t_70)
 
-### 参考文章
+### 参考资料
 
 [Babel7](https://blog.csdn.net/wsln_123456/article/details/115065749)
 [@babel/plugin-transform-runtime 这个包的使用场景是什么](https://www.cnblogs.com/longmo666/p/18116073)

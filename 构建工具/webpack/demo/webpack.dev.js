@@ -44,7 +44,7 @@ module.exports = merge(commonConfig, {
         // 如果为true,表示服务端收到的headers.host就是服务器本身所在的ip地址，
         // 如果为false,表示服务端收到的headers.host就是开发者电脑所在的ip地址,即开发者浏览器地址栏显示的地址
         // changeOrigin无论是true还是false,都不会影响发送“请求网址‘,只会影响服务器方的host值
-        // 参考文章：https://blog.csdn.net/Old_Soldier/article/details/127204618 《原来我误会了 changeOrigin 这么多年》
+        // 参考资料：https://blog.csdn.net/Old_Soldier/article/details/127204618 《原来我误会了 changeOrigin 这么多年》
       },
     },
   },

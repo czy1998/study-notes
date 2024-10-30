@@ -4,12 +4,12 @@
 
 ```less
 .demo {
-    color: red;
-    :global {
-        .title {
-            color: green;
-        }
+  color: red;
+  :global {
+    .title {
+      color: green;
     }
+  }
 }
 ```
 
@@ -17,16 +17,16 @@
 
 ```css
 .className {
-    background-color: blue;
+  background-color: blue;
 }
 
 .title {
-    composes: className;
-    color: red;
+  composes: className;
+  color: red;
 }
 ```
 
-# 参考文章
+# 参考资料
 
 [CSS Modules 用法教程](https://www.ruanyifeng.com/blog/2016/06/css_modules.html)
 [CSS Module](https://www.jianshu.com/p/35da48b0e5ed)

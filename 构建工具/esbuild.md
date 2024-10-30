@@ -11,25 +11,25 @@
 
 根据官网 esbuild 的 FAQ 给出解释，简要总结下 esbuild 相比于传统构建工具有以下优势：
 
--   **语言优势**。esbuild 是基于 go 语言，传统的 JS 开发的构建工具并不适合资源打包这种 CPU 密集场景下，go 更具性能优势。
--   **多线程能力**。go 具有多线程运行能力，而 JS 本质上就是一门单线程语言。由于 go 的多个线程是可以共享内存的，所以可以将解析、编译和生成的工作并行化。
--   **从零开始**。从一开始就考虑性能，不使用第三方依赖，从始至终使用的是一致的数据结构从而避免昂贵的数据转换。
--   **内存的有效利用**。webpack 的工作机制在经过不同的工具链的时候，都会进行（`string => AST => string => ... => string`）string 到 AST 的不断转换，这样实际上会占用更多的内存并降低速度。而 esbuild 从头到尾尽可能的共用一份 AST，从而降低内存的占用，提升编译速度。
+- **语言优势**。esbuild 是基于 go 语言，传统的 JS 开发的构建工具并不适合资源打包这种 CPU 密集场景下，go 更具性能优势。
+- **多线程能力**。go 具有多线程运行能力，而 JS 本质上就是一门单线程语言。由于 go 的多个线程是可以共享内存的，所以可以将解析、编译和生成的工作并行化。
+- **从零开始**。从一开始就考虑性能，不使用第三方依赖，从始至终使用的是一致的数据结构从而避免昂贵的数据转换。
+- **内存的有效利用**。webpack 的工作机制在经过不同的工具链的时候，都会进行（`string => AST => string => ... => string`）string 到 AST 的不断转换，这样实际上会占用更多的内存并降低速度。而 esbuild 从头到尾尽可能的共用一份 AST，从而降低内存的占用，提升编译速度。
 
 ### 核心 API
 
 esbuild 对外提供了两个核心 API——tranform 和 build，主要功能如下：
 
--   支持将 js、ts、jsx、tsx、css 等一系列文件的转译。
--   支持文件监听和 devServer。
--   支持 sourcemap。
-    - sourceMap 是一项将编译、打包、压缩后的代码映射回源代码的技术
-     由于打包压缩后的代码并没有阅读性可言，一旦在开发中报错或者遇到问题，直接在混淆代码中 debug 问题会带来非常糟糕的体验，
-     sourceMap 可以帮助我们快速定位到源代码的位置，提高我们的开发效率。
-     sourceMap 其实并不是 esbuild 特有的功能，而是 esbuild 支持 sourceMap ，像 JQuery 也支持 souceMap。
--   支持 code-splitting。
--   支持 tree-shaking 和文件压缩。
--   ...
+- 支持将 js、ts、jsx、tsx、css 等一系列文件的转译。
+- 支持文件监听和 devServer。
+- 支持 sourcemap。
+  - sourceMap 是一项将编译、打包、压缩后的代码映射回源代码的技术
+    由于打包压缩后的代码并没有阅读性可言，一旦在开发中报错或者遇到问题，直接在混淆代码中 debug 问题会带来非常糟糕的体验，
+    sourceMap 可以帮助我们快速定位到源代码的位置，提高我们的开发效率。
+    sourceMap 其实并不是 esbuild 特有的功能，而是 esbuild 支持 sourceMap ，像 JQuery 也支持 souceMap。
+- 支持 code-splitting。
+- 支持 tree-shaking 和文件压缩。
+- ...
 
 详细的可见[官方文档][1]。
 
@@ -51,18 +51,18 @@ esbuild 对外提供了两个核心 API——tranform 和 build，主要功能�
 
 **优势**：
 
--   构建速度非常快
--   压缩能力也非常强，可支持 JS 和 CSS 的压缩。
+- 构建速度非常快
+- 压缩能力也非常强，可支持 JS 和 CSS 的压缩。
 
 **不足**：
 
--   其 tranform 的 API 不能将产物编译到 es5 及以下，产物无法兼容低版本的浏览器。
--   直接使用 esbuild 进行打包具有一定的使用成本，并且不能完全覆盖使用场景。
--   在代码分割和 CSS 处理方面功能还有待完善。
+- 其 tranform 的 API 不能将产物编译到 es5 及以下，产物无法兼容低版本的浏览器。
+- 直接使用 esbuild 进行打包具有一定的使用成本，并且不能完全覆盖使用场景。
+- 在代码分割和 CSS 处理方面功能还有待完善。
 
-### 参考文章
+### 参考资料
 
-1. [esbuild api文档](https://esbuild.github.io/api/)
+1. [esbuild api 文档](https://esbuild.github.io/api/)
 
 [1]: https://esbuild.github.io/api/
 [2]: https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/00cc62c2e33c46169789efb629db0279~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?
