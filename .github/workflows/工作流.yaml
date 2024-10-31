@@ -1,0 +1,30 @@
+# 参考资料
+# [工作流语法]:(https://docs.github.com/zh/actions/writing-workflows/workflow-syntax-for-github-actions)
+# [触发工作流的事件]:(https://docs.github.com/zh/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows)
+
+# 可选，工作流的名称，若省略该字段，将会使用工作流文件名称
+name: learn-demo
+# 可选，从工作流生成的工作流运行器的名称（具体效果是：仓库 Actions 面板下表格内数据的标题）
+run-name: ${{ github.actor }} is learning GitHub Actions
+# 可选，指定此工作流的触发器，这个例子使用了 push 事件，是通过向每个分支推送触发的
+on: [push]
+# 将工作流中的运行的 任务 分组
+jobs:
+  # 定义了一个名为 run-file 的任务，其下面的 key 将作为的其的属性
+  run-file:
+    # 可以使用条件来阻止步骤运行
+    if: 123 == 12
+    # 配置程序运行所在的虚拟机
+    runs-on: ubuntu-latest
+    # 将任务中需要执行的步骤汇总起来
+    steps:
+      # uses 关键字指定此步骤将运行 actions/checkout@v4 操作。这是一个向运行器检出仓库的操作，允许你对代码运行脚本或其他操作（例如构建和测试工具）
+      # 只要工作流要使用存储库的代码，就应该使用checkout操作
+      - uses: actions/checkout@v4
+      # 这一步使用 actions/setup-node@v4 操作来安装指定版本的 Node.js（这个例子使用的是版本20。）这将把 node 和 npm 命令都放在你的 PATH 中。
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # run 关键字告诉作业在运行器上执行命令
+      - run: echo "hello world"
+      # - run: node a.js

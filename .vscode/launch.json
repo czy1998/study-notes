@@ -1,0 +1,25 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+
+    // 下面是一个【vscode调试】配置文件，用 node 环境来启用的，配置文件目的是模拟 "npx ts-node ./demo.ts" 指令，进行断点调试
+    // 通过 vscode 默认创建的 launch.json 文件，直接运行是会抛错的，因为这样就等同于 "node ./demo.ts"
+    // 还需要将 ts-node 给配置上，所以要再配置文件中加上 runtimeArgs 参数，参数的值就是 ts-node 包里的可执行2进制文件
+    // 也就是 package.json 内 bin 字段对应的位置
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "启动程序",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "runtimeArgs": [
+                "${workspaceFolder}/node_modules/ts-node/dist/bin.js"
+            ],
+            "program": "${workspaceFolder}/demo.ts"
+        }
+    ]
+}
