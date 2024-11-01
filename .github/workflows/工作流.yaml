@@ -28,3 +28,20 @@ jobs:
       # run 关键字告诉作业在运行器上执行命令
       - run: echo "hello world"
       # - run: node a.js
+
+      # |
+      # 表示“保留换行符”，即将输入的文本保留为多行字符串，包括换行符。
+      # 在转换为实际字符串时，文本中的每个换行都会被保留。
+      # 下方案例输出: "Hello\nWorld\n"
+      - name: "| 的使用"
+        run: |
+          echo "Hello"
+          echo "World"
+      # |-
+      # 表示“折叠换行符”，即将输入的文本转换为单行字符串，但移除最后的换行符
+      # 其他的换行会被转换为空格。
+      # 下方案例输出: "Hello World"
+      - name: "|- 的使用"
+        run: |-
+          echo "Hello"
+          echo "World"
