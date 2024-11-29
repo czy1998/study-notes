@@ -20,7 +20,7 @@
       ```json
       "main": "src/index.js",
       ```
-   2. 在项目**根目录**下，执行 `pnpm add app2 --workspace -w`
+   2. 在项目**根目录**下，执行 `pnpm --workspace -w add app2`
       ```sh
       --workspace # 只有此依赖存在句 workspace 中才会被安装
       -w #  在 workspace 项目根目录下执行此命令
@@ -29,9 +29,9 @@
 5. 安装依赖
 
    - 安装公共依赖
-     `pnpm add [要安装的依赖] -w`
+     `pnpm -w add [要安装的依赖]`
    - 安装局部依赖
-     `pnpm add [要安装的依赖] --filter [子包名称]`
+     `pnpm --filter [子包名称] add [要安装的依赖]`
 
 6. 递归执行
 
@@ -41,3 +41,10 @@
    ```
 
    **注意**: 在递归执行之前，确保每个 `package` 都定义了这个脚本
+
+7. 运行子包命令
+
+   ```sh
+   pnpm --filter app2 build # 执行子包 app2 内的 build 命令
+                            # 相当于进入子包目录，运行 pnpm run build
+   ```
