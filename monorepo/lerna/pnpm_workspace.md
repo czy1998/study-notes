@@ -22,7 +22,7 @@
       ```
    2. 在项目**根目录**下，执行 `pnpm --workspace -w add app2`
       ```sh
-      --workspace # 只有此依赖存在句 workspace 中才会被安装
+      --workspace # 只有此依赖存在于 workspace 中才会被安装
       -w #  在 workspace 项目根目录下执行此命令
       ```
 
