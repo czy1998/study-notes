@@ -24,6 +24,8 @@
 - fs-extra Node.js fs 包中没有包含的方法，比如 copy(), remove(), mkdirs()
 - cross-env 运行跨平台设置和使用环境变量的脚本
 - glob 使用 shell 使用的模式匹配文件。JavaScript 中最正确和第二快的 glob 实现
+- dotenv 可以将一个 `.env` 文件中的变量加载到 `process.env` 中
+- json-server 可以让你使用一个 JSON 文件快速创建一个完整的 RESTful API 服务器，帮助你在没有后端服务器的情况下进行前端开发和测试
 
 **Lint 相关**
 
