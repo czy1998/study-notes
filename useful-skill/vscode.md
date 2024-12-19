@@ -145,6 +145,10 @@
      cmd + alt + 左中括号 # 折叠代码，连续按则是将上一级折叠
      cmd + alt + 右中括号 # 展开代码，就当前一级
      cmd + k + cmd + l   # 展开/收起切换
+     cmd + k + cmd + 0   # 全部折叠
+     cmd + k + cmd + J   # 全部展开
+     cmd + k + cmd + [   # 递归方式折叠
+     cmd + k + cmd + ]   # 递归方式展开
    ```
 
 9. settings 相关
