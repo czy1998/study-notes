@@ -28,5 +28,6 @@
     // "alibaba-cloud.tongyi-lingma", // 通义灵码，智能编码助手
     // "simonhe.log", // 一个快速生成log插件
     "iceworks-team.iceworks-time-master" // 统计代码量的工具
+    // "codeium.codeium" // tab AI补全内容的插件
   ]
 }
