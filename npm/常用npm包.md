@@ -17,6 +17,7 @@
 - [schema-utils][1] 在加载器和插件中验证选项的包
 - rimraf 节点的深度删除模块(如' rm -rf ')
 - ora 优雅的终端机
+- unjs/consola Node.js 和浏览器的优雅控制台日志
 - node-ssh 封装 ssh2 的一个非常轻量级的 Promise 包装器，可以连接客户端和服务器
 - inquirer 公共交互式命令行用户界面的集合
 - update-notifier 以非侵入式的方式通知用户您的更新包
