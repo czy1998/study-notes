@@ -55,3 +55,58 @@
   ctrl + 左/右方向键 # 切换桌面
   ctrl + 上/下方向键 # 预览桌面
 ```
+
+6. 查看系统的代理设置
+
+```sh
+# 终端输入
+scutil --proxy
+```
+
+输出类似如下的信息:
+
+```sh
+# 开启代理时
+<dictionary> {
+  ExceptionsList : <array> {
+    0 : 127.0.0.1
+    1 : 192.168.0.0/16
+    2 : 10.0.0.0/8
+    3 : 172.16.0.0/12
+    4 : localhost
+    5 : *.local
+    6 : *.crashlytics.com
+    7 : <local>
+  }
+  FTPPassive : 1
+  HTTPEnable : 1
+  HTTPPort : 7897
+  HTTPProxy : 127.0.0.1
+  HTTPSEnable : 1
+  HTTPSPort : 7897
+  HTTPSProxy : 127.0.0.1
+  ProxyAutoConfigEnable : 0
+  SOCKSEnable : 1
+  SOCKSPort : 7897
+  SOCKSProxy : 127.0.0.1
+}
+
+# 关闭代理时
+<dictionary> {
+  ExceptionsList : <array> {
+    0 : 127.0.0.1
+    1 : 192.168.0.0/16
+    2 : 10.0.0.0/8
+    3 : 172.16.0.0/12
+    4 : localhost
+    5 : *.local
+    6 : *.crashlytics.com
+    7 : <local>
+  }
+  FTPPassive : 1
+  HTTPEnable : 0
+  HTTPSEnable : 0
+  ProxyAutoConfigEnable : 0
+  SOCKSEnable : 0
+}
+```
