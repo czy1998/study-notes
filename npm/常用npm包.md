@@ -61,6 +61,10 @@
 
 - puppeteer 一个高级的 API 来控制无头 Chrome 在 DevTools 协议
 
+**Dom 相关**
+
+- html2canvas 基于 DOM，根据页面上可用的信息构建截图。
+
 ### 使用介绍
 
 **cross-env**
