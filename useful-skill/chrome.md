@@ -111,3 +111,23 @@
    -> $_ # 是对上次执行的结果的 引用
    <- 123
    ```
+
+10. 选中动态变化的 dom 节点进行审查，例如
+
+    - select 组件的 option 面板
+    - chatGPT 历史会话列表，更多按钮触发的操作面板
+
+    通常展开这类面板后，我们想通过快捷键（`cmd + shift + c`）聚焦到节点上，按下快捷键后面板会收起来
+    chatGPT 中的面板更是会直接从 dom 上删除
+
+    **解决办法**
+
+    在控制台输入如下代码，5s 后触发 debugger，执行代码，再去展开面板，等时间到触发 debugger，即可选中 dom
+
+    ```js
+    let timer = setTimeout(() => {
+      debugger;
+      clearTimeout(timer);
+      timer = null;
+    }, 5000);
+    ```
