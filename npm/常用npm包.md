@@ -48,6 +48,8 @@
 - dumi React 组件的文档生成器
 - classnames 一个简单的工具，用于有条件地连接类名
 - react-beautiful-dnd 用于实现 React 内的拖拽功能
+- twMerge 合并、处理无效冲突的类 tailwindcss 样式
+- clsx 一个轻量的程序、用于有条件的构建 className 字符串，支持 tailwindcss
 
 **日期格式化相关**
 
