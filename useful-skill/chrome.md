@@ -45,10 +45,15 @@
 
    - 选择已有的请求，右键，选择 `Replay XHR` 即可重新发送该请求
    - 选择已有的请求，右键，选择 `Copy as fetch` ，然后将复制的内容粘贴到 `console` 里，修改需要变动的参数，并作如下处理，然后回车即可在 network 里查看修改参数后的请求了
+
      ```js
        fetch(...)
        .then(res => res.json()) // 末尾加上这一行
+
+       // 或者直接 await
+       await fetch(...)
      ```
+
    - 选择已有的请求，右键，选择 `Copy as cUrl`，然后直接拷贝到`终端`再回车、在 postman、apifox 里则需找到 `import` 按钮 / `+` 按钮，然后粘贴到对应工具里即可
 
 5. devTools 快捷键
