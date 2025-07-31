@@ -35,3 +35,7 @@ module.exports = {
   plugins: [],
 };
 ```
+
+### 参考资料
+
+- [重新定义现代前端开发的设计系统！Tailwind CSS 终极指南](https://juejin.cn/post/7399986979729522722#heading-4)
