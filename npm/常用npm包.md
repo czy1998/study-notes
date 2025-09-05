@@ -15,7 +15,7 @@
 
 - yargs-parser 终端参数解析器
 - [schema-utils][1] 在加载器和插件中验证选项的包
-- rimraf 节点的深度删除模块(如' rm -rf ')
+- rimraf rm -rf 在 node 平台上的实现
 - ora 优雅的终端机
 - unjs/consola Node.js 和浏览器的优雅控制台日志
 - node-ssh 封装 ssh2 的一个非常轻量级的 Promise 包装器，可以连接客户端和服务器
