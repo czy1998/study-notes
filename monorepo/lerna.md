@@ -32,6 +32,20 @@ lerna list # 查看所有的子包名称
    2. 在子包目录下执行 npm install 命令，安装子包依赖项。
    3. 在根目录下的 node_modules 目录中，创建一个软链接，指向该子包的 node_modules 目录。
 
+#### dumi + lerna 创建组件库基本流程
+
+1. 使用 dumi 构建一个静态站点结构
+2. 安装 lerna, 执行 lerna init, 修改 lerna.json 添加 `"packages": ["packages/*"]`
+3. 修改 package.json, 添加 workspaces 配置 `"workspaces": [ "packages/*" ]`
+4. 安装 father, 根目录下创建基础打包配置文件 `.fatherrc.base.ts`
+5. 创建 packages 目录，新建 npm 包，每个包配置打包命令 `build: father build`, 并在包内创建 `.fatherrc.ts`, 继承根目录的配置, 完善每个包 package.json 下的 main, module, types, file 字段
+6. 开发 npm 包内容, 若包内设有 demo 需要引入 package 下的包时，需要修改 `.dumirc.ts` 内的 alias, 为 tsconfig.json 添加 path 映射配置
+7. 开发完成，根目录下床阿金 `.npmrc`, 指定要发包的仓库
+8. 执行 `npx lerna publish` 进行发包
+
+**注意**
+要发的包的名称，不要和仓库内已有包相同，不然会冲突报错
+
 ### 参考资料
 
 [Lerna 学习与理解](https://juejin.cn/post/7005399626744332295#heading-12)
