@@ -40,7 +40,7 @@ lerna list # 查看所有的子包名称
 4. 安装 father, 根目录下创建基础打包配置文件 `.fatherrc.base.ts`
 5. 创建 packages 目录，新建 npm 包，每个包配置打包命令 `build: father build`, 并在包内创建 `.fatherrc.ts`, 继承根目录的配置, 完善每个包 package.json 下的 main, module, types, file 字段
 6. 开发 npm 包内容, 若包内设有 demo 需要引入 package 下的包时，需要修改 `.dumirc.ts` 内的 alias, 为 tsconfig.json 添加 path 映射配置
-7. 开发完成，根目录下床阿金 `.npmrc`, 指定要发包的仓库
+7. 开发完成，根目录下新建 `.npmrc`, 指定要发包的仓库
 8. 执行 `npx lerna publish` 进行发包
 
 **注意**
