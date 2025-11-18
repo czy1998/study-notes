@@ -219,3 +219,113 @@ HTTP（HyperText Transfer Protocol，超文本传输协议）是互联网上用�
 - 503：服务器停机维护时，主动用 503 响应请求或 nginx 设置限速，超过限速，会返回 503
 
 - 504：网关超时
+
+### 常用 HTTP 标头
+
+- Accept: 用于指示发送方能够理解的内容类型，这些类型以 `MIME` 类型的形式表示，例如
+
+  - Accept: text/plain
+  - 服务器会使用`内容协商`机制，从客户端提议的内容类型中选择一种，并通过 `Content-Type` 响应标头告知客户端所选择的类型
+
+- Accept-Encoding: 表示客户端能够理解的内容编码（通常是某种压缩算法），例如
+
+  - Accept-Encoding: gzip, deflate
+  - 服务器使用内容协商从中选择一个提议，并通过 `Content-Encoding` 响应标头告知客户端这一选择
+
+- Accept-Language: 表示客户端所偏好的自然语言和区域设置，例如
+
+  - Accept-Language: zh-CN,en;q=0.5
+  - 服务器利用`内容协商`机制从这些提议中选出一项，并通过 `Content-Language` 响应标头将这一选择告知客户端
+
+- Authorization: 用于提供服务器验证用户代理身份的凭据，例如
+
+  - Authorization: Bearer eyJhbGciOiJIU...(后续还有字符，此处省略处理)
+
+- Cache-Control: 指定指令来实现缓存机制，例如
+
+  - Cache-control: no-cache
+  - no-cache: 不代表不使用缓存，而表示在重用响应之前，必须要向服务器重新验证
+  - no-store: 表示不使用缓存
+
+- Connection: 控制网络连接在当前会话完成后是否仍然保持打开状态，例如
+
+  - Connection: keep-alive
+  - 这就表示连接是持久的，不会关闭，允许对同一服务器进行后续请求
+  - **注意**: HTTP/2、HTTP/3 中，禁止使用特定于连接的标头字段，如 Connection 和 Keep-Alive。Chrome 和 Firefox 会在 HTTP/2 响应中忽略它们，但 Safari 遵循 HTTP/2 规范要求，不会加载包含这些字段的任何响应
+
+- Cookie: 其中含有先前由服务器通过 `Set-Cookie` 标头投放或通过 JavaScript 的 `Document.cookie` 方法设置，然后存储到客户端的 HTTP cookie，例如
+
+  - Set-Cookie: name=value; HttpOnly; Secure
+  - Cookie: name=value
+  - 可以用于存储用户的登录信息、个性化设置(网站字体、背景)
+
+- Content-Length: 表示发送给接收方的消息体的大小（以字节为单位）
+
+  - Content-Length: 348
+
+- Content-Type: 表示请求体的 MIME 类型，例如
+
+  - Content-Type: application/json;charset=UTF-8
+  - 与上文的 `Accept` 配合使用
+
+- Date: 包含了消息创建时的日期和时间，例如
+
+  - Date: Tue, 18 Nov 2025 02:52:09 GMT
+
+- Host: 指定了接收请求的服务器的主机名和端口号，例如
+
+  - www.baidu.com
+  - 其可用于实现`虚拟主机`
+  - 所有 HTTP/1.1 请求消息中都必须发送一个 Host 标头字段，若请求缺少或者包含多个该标头，可能会发送 400 状态码
+
+- If-Match: 表示这是一个条件请求，例如
+
+  - If-Match: "bfc13a64729c4290ef5b2c2730249c88ca92d82d"
+  - 在请求方法为 `GET` 和 `HEAD` 的情况下，服务器仅在请求的资源满足此首部列出的 `ETag` 值时才会返回资源
+  - 对于 `PUT` 或其他非安全方法来说，只有在满足条件的情况下才可以将资源上传
+  - `ETag` 之间的比较使用的是`强比较算法`
+
+- If-None-Match: 表示这是一个条件请求，例如
+
+  - If-None-Match: "bfc13a64729c4290ef5b2c2730249c88ca92d82d"
+  - 对于 `GET` 和 `HEAD` 请求方法来说，当且仅当服务器上没有任何资源的 `ETag` 属性值与这个首部中列出的相匹配的时候，服务器端才会返回所请求的资源，响应码为 200，否则返回 304 未修改
+  - 对于其他方法来说，当且仅当最终确认没有已存在的资源的 `ETag` 属性值与这个首部中所列出的相匹配的时候，才会对请求进行相应的处理
+  - `ETag` 属性之间的比较采用的是弱比较算法
+
+- If-Modified-Since: 表示这是一个条件请求，例如
+
+  - If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT
+  - 当请求的资源，在所传日期参数只有有修改过，则返回资源，状态码为 200
+  - 若未修改过，则返回不带消息主体的 304 响应，响应头 Last-Modified 中会带有上次修改时间
+  - If-Modified-Since 只可以用在 GET 或 HEAD 请求中
+
+- If-Range: 表示这是一个条件请求，例如
+
+  - If-Range: "737060cd8c284d8af7ad3082f209582d"
+  - If-Range: Wed, 21 Oct 2015 07:28:00 GMT
+  - 当条件得到满足时，则发出范围请求，服务器将返回 206 Partial Content 状态，以及相应的内容
+  - 如果条件没有得到满足，服务器将返回完整的资源以及 200 OK 状态
+
+- Range: 告知服务器返回文件的哪一部分，例如
+
+  - Range: bytes=200-1000, 2000-6576, 19000-
+  - 在一个 Range 标头中，可以一次性请求多个部分，服务器会以 multipart 文件的形式将其返回
+  - 如果服务器返回的是范围响应，需要使用 206 Partial Content 状态码
+  - 假如所请求的范围不合法，那么服务器会返回 416 Range Not Satisfiable 状态码，表示客户端错误
+  - 服务器允许忽略 Range 标头，从而返回整个文件，状态码用 200
+
+- Referer: 包含了当前请求页面的来源页面的地址，例如:
+
+  - https://www.baidu.com/
+    如果实际页面路径为 https://www.baidu.com/#/home?name=123 那来源将不会包括 hash 后面的内容
+  - https://www.baodu.com/?xx=12
+
+- User-Agent: 表示发出请求的用户代理的应用程序、操作系统、供应商或版本信息，例如
+
+  - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+
+- Origin: 表示了请求的来源（协议、主机、端口），例如
+  - Origin: https://developer.mozilla.org
+  - 一般在以下情况中添加 Origin 请求标头
+    - 跨源请求
+    - 除 `GET` 和 `HEAD` 以外的同源请求（即它会被添加到同源的 POST、OPTIONS、PUT、PATCH 和 DELETE 请求中）
