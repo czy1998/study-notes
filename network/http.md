@@ -244,7 +244,7 @@ HTTP（HyperText Transfer Protocol，超文本传输协议）是互联网上用�
 - Cache-Control: 指定指令来实现缓存机制，例如
 
   - Cache-control: no-cache
-  - no-cache: 不代表不使用缓存，而表示在重用响应之前，必须要向服务器重新验证
+  - no-cache: 不代表不使用缓存，而表示在重用响应之前，必须要向服务器重新验证，相当于舍弃了`强缓存`，每次都走`协商缓存`
   - no-store: 表示不使用缓存
 
 - Connection: 控制网络连接在当前会话完成后是否仍然保持打开状态，例如

@@ -18,8 +18,10 @@
     - 对于通过 HTTPS 建立的安全连接，还需要另一次 "握手"。这种握手，或者说 TLS 协商，决定使用哪种密码对通信进行加密，验证服务器，并在开始实际数据传输前建立安全连接。这就需要在实际发送内容请求之前，再往返服务器五次。
     - （包括服务器和客户端之间的 clienthello、serverhello 以及证书、clientkey 和完成消息）。
 4.  客户端发送 http 请求
-    - http 缓存
-      - **强缓存**，判断本地缓存未过期则直接读取缓存，不用再次请求，如(200 from memory/disk cache)
+    - http 缓存，先访问强缓存，未命中，才去访问协商缓存
+      - **强缓存**
+        - `Cache-Control: max-age=31536000` 此配置就表示开启了强缓存
+        - 判断本地缓存未过期则直接读取缓存，不用再次请求，如(200 from memory/disk cache)
       - **协商缓存**
         - http1.0 If-Modified-Since(请求头上)/Last-Modified(响应头)，如果 If-Modified-Since 和 Last-Modified 匹配，那么代表服务器资源并未改变，因此服务端不会返回资源实体，而是只返回头部，通知浏览器可以使用本地缓存。Last-Modified，顾名思义，指的是文件最后的修改时间，而且只能精确到 1s 以内。
           &nbsp;
