@@ -5,29 +5,34 @@
 {
   // 每一项都是一个插件 ID
   "recommendations": [
-    "formulahendry.auto-rename-tag", // 闭合时自动添加结束标签，同时修改开始、结束标签
     "MS-CEINTL.vscode-language-pack-zh-hans", // 中文语言包
+    "overtrue.miniapp-helper", // 微信小程序开发助手
+    "formulahendry.auto-rename-tag", // 闭合时自动添加结束标签，同时修改开始、结束标签
+    "biomejs.biome", // 代码格式化工具，包含了部分 eslint 与 prettier 的功能
+    "streetsidesoftware.code-spell-checker", // 检查单词拼写是否正确
     "usernamehw.errorlens", // 增强错误信息的提示
     "dsznajder.es7-react-js-snippets", // react、js 的代码片段
-    "burkeholland.simple-react-snippets", // 一些简单的 react 代码片段
     // "dbaeumer.vscode-eslint", // eslint 代码静态分析工具
     "maixiaojie.git-emoji-zh", // 提交 git 的时候，加上 emoji 前缀
     "mhutchie.git-graph", // 图形化查看git提交节点
+    "GitHub.copilot-chat", // GitHub Copilot Chat AI 聊天助手
     "eamodio.gitlens", // 增强 git 的使用
+    "cweijan.vscode-mysql-client2", // MySQL 可以连接数据库，查看和管理数据
+    "techer.open-in-browser", // 将当前 html 在浏览器中打开
+    // "esbenp.prettier-vscode", // prettier 漂亮的代码格式化器
+    // "humao.rest-client", // 在 VS Code 中发送 HTTP 请求，调试接口
+    "burkeholland.simple-react-snippets", // 一些简单的 react 代码片段
+    "bradlc.vscode-tailwindcss", // 提供 Tailwind CSS 样式提示
+    "Vue.volar" // 支持 vue 代码高亮
+    // "adpyke.codesnap", // 截取漂亮的代码截图
+    // "iceworks-team.iceworks-time-master" // 统计代码量的工具
+    // "simonhe.log", // 一个快速生成log插件
+    // "yrm.type-challenges", // 练习ts的插件
+    // "WallabyJs.quokka-vscode", // js 和 ts 的实时运行代码平台，提供实时反馈
     // "redhat.java", // 支持 java 代码的快捷跳转
     // "shd101wyy.markdown-preview-enhanced", // 增强预览 markdown 文件
-    // "Vue.volar", // 支持 vue 代码高亮（猜测）
     // "qiu8310.minapp-vscode", // 支持 WXML 代码高亮（猜测）
-    // "adpyke.codesnap", // 截取漂亮的代码截图
-    // "WallabyJs.quokka-vscode", // js 和 ts 的实时运行代码平台，提供实时反馈
-    // "esbenp.prettier-vscode", // prettier 漂亮的代码格式化器
-    "TabNine.tabnine-vscode", // 按 Tab AI 帮你补全代码
-    // "biomejs.biome", // 代码格式化工具，包含了部分 eslint 与 prettier 的功能
-    "streetsidesoftware.code-spell-checker", // 检查单词拼写是否正确
-    // "yrm.type-challenges", // 练习ts的插件
     // "alibaba-cloud.tongyi-lingma", // 通义灵码，智能编码助手
-    // "simonhe.log", // 一个快速生成log插件
-    "iceworks-team.iceworks-time-master" // 统计代码量的工具
-    // "codeium.codeium" // tab AI补全内容的插件
+    // "codeium.codeium" // 免费 tab AI补全内容的插件
   ]
 }
