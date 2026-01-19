@@ -2,7 +2,7 @@
 
 ### 目录
 
-**提效**
+#### 提效
 
 - @antfu/ni 运行脚本时自动识别项目所使用的 npm 包管理工具，并用其做关联操作
 - vconsole 一个轻量、可拓展、针对手机网页的前端开发者调试面板
@@ -11,7 +11,7 @@
   - 需要位于相应目录下，-L 不打印任何请求信息 -p 指定端口号
   - serve -Lp 3030
 
-**node 相关**
+#### node 相关
 
 - yargs-parser 终端参数解析器
 - [schema-utils][1] 在加载器和插件中验证选项的包
@@ -24,11 +24,28 @@
 - chalk 是一个非常简单的库，创建它的目的很简单——给你的终端字符串添加样式
 - fs-extra Node.js fs 包中没有包含的方法，比如 copy(), remove(), mkdirs()
 - cross-env 运行跨平台设置和使用环境变量的脚本
+
+  - 如何使用
+
+  ```js
+  // parkage.json
+  {
+      "scripts": {
+          "test": "cross-env APP_ENV=test node server.js"
+      }
+  }
+  ```
+
+  这里 cross-env 可以帮你设置环境变量，由于在不同系统平台设置环境变量的指令基本都不同（windows、mac 等），如果写死一种，则在其他系统下执行可能会报错.
+  cross-env 就可以帮你在不同系统下正确的的设置环境变量.
+
+  [1]: https://www.51cto.com/article/703602.html
+
 - glob 使用 shell 使用的模式匹配文件。JavaScript 中最正确和第二快的 glob 实现
 - dotenv 可以将一个 `.env` 文件中的变量加载到 `process.env` 中
 - json-server 可以让你使用一个 JSON 文件快速创建一个完整的 RESTful API 服务器，帮助你在没有后端服务器的情况下进行前端开发和测试
 
-**Lint 相关**
+#### Lint 相关
 
 - husky git 钩子
 - eslint 识别和报告 ECMAScript/JavaScript 代码中发现的模式的工具
@@ -42,7 +59,7 @@
 - @testing-library/jest-dom 自定义匹配器来测试 DOM 的状态
 - @umijs/test 封装好的单测测试工具
 
-**组件相关**
+#### 组件相关
 
 - father 一个无捆绑/捆绑构建工具
 - dumi React 组件的文档生成器
@@ -51,37 +68,30 @@
 - twMerge 合并、处理无效冲突的类 tailwindcss 样式
 - clsx 一个轻量的程序、用于有条件的构建 className 字符串，支持 tailwindcss
 
-**日期格式化相关**
+#### 日期格式化相关
 
 - dayjs 2KB 不可变日期时间库，具有相同的现代 API，可替代 Moment.js
 
-**金额计算相关**
+#### 金额计算相关
 
 - currency.js 一个小型、轻量的处理金额计算的工具
 
-**Web 自动化**
+#### Web 自动化
 
 - puppeteer 一个高级的 API 来控制无头 Chrome 在 DevTools 协议
 
-**Dom 相关**
+#### Dom 相关
 
 - html2canvas 基于 DOM，根据页面上可用的信息构建截图。
 
-### 使用介绍
+#### 请求相关
 
-**cross-env**
-cross-env 是运行跨平台设置和使用环境变量的脚本
-
-```js
-// parkage.json
-{
-    "scripts": {
-        "test": "cross-env APP_ENV=test node server.js"
-    }
-}
-```
-
-这里 cross-env 可以帮你设置环境变量，由于在不同系统平台设置环境变量的指令基本都不同（windows、mac 等），如果写死一种，则在其他系统下执行可能会报错.
-cross-env 就可以帮你在不同系统下正确的的设置环境变量.
-
-[1]: https://www.51cto.com/article/703602.html
+- TanStack Query
+  - 支持多种框架的请求，react、vue，适合 业务复杂 / CRUD 多 / 多端共享
+  - https://github.com/tanstack/query
+- SWR
+  - 仅有 react 版本，适合 轻量项目 / 读多写少 / Next.js 博客类
+  - https://github.com/vercel/swr
+- ahooks/useRequest
+  - 中文文档，学习成本低
+  - https://ahooks.js.org/zh-CN/hooks/use-request/index
