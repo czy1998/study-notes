@@ -110,3 +110,7 @@ scutil --proxy
   SOCKSEnable : 0
 }
 ```
+
+7. 深度清理和优化你的mac
+
+[项目地址](https://github.com/tw93/Mole)，有空可以研究一下
