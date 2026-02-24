@@ -27,6 +27,7 @@ module.exports = merge(commonConfig, {
   devServer: {
     compress: true, // 启用 gzip compression
     open: true, // 自动打开浏览器
+    host: "localhost", // 主机地址
     port: 9000, // 端口号
     static: {
       directory: path.resolve(__dirname, "dist"),
@@ -96,7 +97,7 @@ module.exports = merge(commonConfig, {
         use: [
           {
             loader: "file-loader",
-            // base64处理，减少请求数量，会使体积变大
+            // 本质功能是复制资源文件并替换访问地址，音视频等资源也可以使用它
             options: {
               name: "[name].[ext]",
               // 将打包之后的图片命名为图片的原始名称
