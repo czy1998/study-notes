@@ -54,7 +54,7 @@ CURRENT_BRANCH=$(git branch --show-current)
 # 获取最新的100条commit记录
 LOG_LIST=$(git log --oneline -n 100)
 
-# 只有当当前分支不包含 'test' 时才执行检查
+# 只有当当前分支名称不包含 'test' 时才执行检查
 # 使用grep检查是否包含合并提交
 if [[ ! "$CURRENT_BRANCH" =~ test ]] && echo "$LOG_LIST" | grep -q "Merge branch '.*' into test"; then
     echo "[warning]: 当前分支可能被污染!"
