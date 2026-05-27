@@ -477,7 +477,7 @@
              Module build failed (from ./node_modules/swc-loader/src/index.js):
              Error: plugin
 
-               × failed to invoke plugin on 'Some("/Users/hooshine/Desktop/work/web/hera-medicine/src/Page/ApplyCenter/TaskDataStatistics/ReportSetting/ReportSettingList.js")'
+               × failed to invoke plugin on 'Some("/Users/work/Desktop/work/web/hera-medicine/src/Page/ApplyCenter/TaskDataStatistics/ReportSetting/ReportSettingList.js")'
 
              @ ./src/router/index.js 850:9-89
              @ ./src/layout/layoutCom.js
