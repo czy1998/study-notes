@@ -108,7 +108,7 @@ const App = () => {
 
   const calculateHash = (fileChunkList) => {
     return new Promise((resolve) => {
-      workRef.current = new Worker("/hash.js");
+      workRef.current = new Worker("./worker-hash.js");
       workRef.current.postMessage({ fileChunkList });
       workRef.current.onmessage = (e) => {
         const { percentage, hash } = e.data;
@@ -187,7 +187,7 @@ const App = () => {
           onProgress: (e) => {
             setData((pre) => {
               pre[index].percentage = Number.parseInt(
-                String((e.loaded / e.total) * 100)
+                String((e.loaded / e.total) * 100),
               );
               return [...pre];
             });
@@ -230,10 +230,10 @@ const App = () => {
 
   const getTotalPercentage = () => {
     if (!file || !data.length) return 0;
-    const lodaed = data
+    const loaded = data
       .map((v) => v.size * v.percentage)
       .reduce((a, b) => a + b);
-    return (lodaed / file.size).toFixed(2);
+    return (loaded / file.size).toFixed(2);
   };
 
   const handleStop = () => {

@@ -60,17 +60,17 @@ const mergeFileChunk = async (filePath, filename, size) => {
         path.resolve(chunkDir, chunkPath),
         fse.createWriteStream(filePath, {
           start: index * size,
-        })
-      )
-    )
+        }),
+      ),
+    ),
   );
   // 删除存放切片的目录
   fse.rmdirSync(chunkDir);
 };
 /**
  * 获取已上传的切片
- * @param {*} fileHash 
- * @returns 
+ * @param {*} fileHash
+ * @returns
  */
 const getUploadedList = async (fileHash) => {
   // 切片存放目录
@@ -96,7 +96,7 @@ server.on("request", async (req, res) => {
       res.end(
         JSON.stringify({
           shouldUpload: false,
-        })
+        }),
       );
     } else {
       // 文件上传中，返回已上传的切片列表
@@ -104,7 +104,7 @@ server.on("request", async (req, res) => {
         JSON.stringify({
           shouldUpload: true,
           uploadedList: await getUploadedList(fileHash),
-        })
+        }),
       );
     }
   }
@@ -120,7 +120,7 @@ server.on("request", async (req, res) => {
       JSON.stringify({
         code: 0,
         message: "file merged success",
-      })
+      }),
     );
   }
 
@@ -141,6 +141,7 @@ server.on("request", async (req, res) => {
     }
     // 接收到的切片，将其迁移指定目录处
     await fse.move(chunk.path, `${chunkDir}/${hash}`);
+    // 这里少一步处理，如果请求中断或取消，需要删除不完整的临时文件
     res.setHeader("content-type", "application/json");
     res.end(JSON.stringify("received file chunk"));
   });
