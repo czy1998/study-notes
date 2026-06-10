@@ -50,7 +50,7 @@ vscode 终端里若也有问题，可以去设置中搜索 `Editor: Font Family`
 
 4. 配置插件
 
-个人推荐几个插件，都需要自己额外安装
+个人推荐几个插件，都需要自己去 github 额外安装
 
 ```sh
 plugins=(
