@@ -45,6 +45,8 @@ npx
 3. 创建全局 hook 目录，并在其中创建一个 `pre-push` 钩子
 4. 在其中填入如下内容，效果 `检测当前分支是否包含test分支的代码`
 
+**ai优化版**
+
 ```bash
 # ~/.global-git-hooks/pre-push
 #!/usr/bin/env sh
@@ -120,6 +122,28 @@ done
 if [ "$HAS_SUSPECT_COMMIT" = true ]; then
     echo "           请检查本次推送的提交来源；确认无异常后可执行 git push --no-verify 跳过检查。"
     exit 1
+fi
+```
+
+**原版**
+
+```bash
+# ~/.global-git-hooks/pre-push
+#!/usr/bin/env sh
+
+# 获取当前分支名称
+CURRENT_BRANCH=$(git branch --show-current)
+# 获取最新的100条commit记录
+LOG_LIST=$(git log --oneline -n 100)
+
+# 只有当当前分支名称不包含 'test' 时才执行检查
+# 使用grep检查是否包含合并提交
+if [[ ! "$CURRENT_BRANCH" =~ test ]] && echo "$LOG_LIST" | grep -q "Merge branch '.*' into test"; then
+    echo "[warning]: 当前分支可能被污染!"
+    echo "           其中包含合并到 test 分支的提交!"
+    echo "           请检查当前分支来源!"
+    echo "           如果确定没有异常，可以执行下面指令来跳过检查"
+    echo "           git push --no-verify"
 fi
 ```
 
