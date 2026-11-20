@@ -114,3 +114,5 @@ scutil --proxy
 7. 深度清理和优化你的mac
 
 [项目地址](https://github.com/tw93/Mole)，有空可以研究一下
+
+8. `访达` 窗口下 按下 `cmd + shift + G` 可以快速前往指定目录
